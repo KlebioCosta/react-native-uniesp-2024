@@ -1,6 +1,7 @@
 import { View, Text, Button, StyleSheet} from 'react-native'
 import { useState } from 'react'
 import React from 'react'
+import { Colors } from 'react-native/Libraries/NewAppScreen'
 
 const Exercicio02 = () => {
 
@@ -14,7 +15,7 @@ const Exercicio02 = () => {
     }
 
   return (
-    <View style ={Styles.container}>
+    <View style ={styles.container}>
         <Button title='incrementar' onPress={incrementar} />
 
         <Text>O contador está em: {contador}</Text>
@@ -25,13 +26,13 @@ const Exercicio02 = () => {
   )
 }
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
     container: {
         alignItems: 'center',
         justifyCounter: 'center',
         padding: 100,
         backgroundColor: 'silver'
-    }
+    },
 }
 )
 
