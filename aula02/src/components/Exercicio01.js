@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     box1: {
         height: 100,
         width: '100%',
-        backgroundColor: 'read',
+        backgroundColor: 'red',
     },
     box2: {
         height: 100,
