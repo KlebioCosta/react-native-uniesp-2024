@@ -16,12 +16,12 @@ const Exercicio04 = () => {
 
 const styles = StyleSheet.create({
     container: {
-        flexDirection: 'row-reverse',
-       
+      flex: 1,
+      flexDirection: 'column',
+      padding: 5,
     },
     box: {
-        flex: 1,
-        
+      flex: 1,
     },
 
 })

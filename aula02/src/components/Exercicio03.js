@@ -4,23 +4,25 @@ import React from 'react'
 const Exercicio03 = () => {
   return (
     <View style = {styles.container} >
-        <View style = {[styles.box, {width: 70, backgroundColor: 'pink' }]} />
-        <View style = {[styles.flexBox, {backgroundColor: 'skyblue' } ]}/>
-        <View style = {[styles.box, {backgroundColor: 'silver', width: 50 }]}/>
+        <View style = {[styles.box, {backgroundColor: 'pink' }]} />
+        <View style = {styles.flexBox} />
+        <View style = {[styles.box, {backgroundColor: 'silver' }]}/>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
     container: {
+        flex: 1,
         flexDirection: 'row',
-        height: 100,
     },
     box: {
         height: '100%',
+        width: 50
     },
     flexBox: {
         flex: 1,
+        backgroundColor: 'skyblue' 
     },
 })
 
