@@ -14,7 +14,7 @@ const Exercicio05 = () => {
         </View>
 
         <View style={styles.listStyle}>
-            <Text>Lista de tarefs</Text>
+            <Text>Lista de tarefas</Text>
         </View>
     </View>
   )
