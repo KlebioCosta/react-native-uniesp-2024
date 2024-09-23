@@ -4,7 +4,7 @@
 O componente `Exercicio01` exibe uma imagem de boas -vindas personalizada.
 
 ## Imagem do Componente `Exercicio01` rodando
-![imagem do exercicio 01 e 02 da aula01](/aula01/images/exercicio-01_02.png)
+![imagem do exercicio 01 da aula01](/aula01/images/exercicio-01_02.png)
 
 ## Documentação
 
@@ -27,7 +27,7 @@ export default App;
 - O componente `Exercicio02` é um contador simples que permite ao usuário incrementar ou decrementar o valor exibido na tela por meio de botões.
 
 ## Imagem do Componente `Exercicio02` rodando
-![imagem do exercicio 03 da aula01 sem digitar no campo de texto](/aula01//images/exercicio-03.png)
+![imagem do exercicio 02 da aula01](/aula01/images/exercicio-01_02.png)
 
 ## Documentação
 
@@ -62,7 +62,11 @@ container: Centraliza o conteúdo com alignItems: 'center' e justifyContent: 'ce
 O componente Exercicio03 permite ao usuário digitar um texto em um campo de entrada, que é exibido abaixo à medida que o texto é digitado. É uma interface simples para visualizar mensagens em tempo real.
 
 ## Imagem do Componente `Exercicio03` rodando
+### Digitando algo
 ![imagem do exercicio 03 da aula01 campo de texto com valor](/aula01/images/exercicio-03-digitado.png)
+### Sem digitar
+![imagem do exercicio 03 da aula01 sem digitar no campo de texto](/aula01//images/exercicio-03.png)
+
 
 ## Documentação
 - Exibe um campo de entrada `(TextInput)` onde o usuário pode digitar um texto.
