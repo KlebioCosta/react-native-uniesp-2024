@@ -4,11 +4,11 @@ const Exercicio04 = () => {
     const [selecionarItem, setSelecioneItem] = useState(null)
     
     const mochilaDeItens = [
-        {id: '1', item: 'Bencao da ressureicao', quantidade: '01', descricao: 'Pode reviver seu personagem com 100% da vida '},
-        {id: '2', item: 'Mapa do tesouro',       quantidade: '04', descricao: 'Mostra a localização do tesouro na região encontrada '},
-        {id: '3', item: 'Elixir',                quantidade: '02', descricao: 'Uma formula feita com sangue dos primeiros, restaura 100% da vida'},
-        {id: '4', item: 'Fruta podre',           quantidade: '03', descricao: 'Um fruto colhido de uma árvore alimentada com os corpos e suspiros dos mortos, perde 20% da vida e restaura 60 de mana'},
-        {id: '5', item: 'Chave enferrujada',     quantidade: '06', descricao: 'Uma chave que já serviu para algo mas está indecifravel a não ser pela pedra em sua base q só pode ser encontrada em um unico lugar'},
+        {id: '1', item: 'Benção Dejeso Dos Deuses', quantidade: 1, descricao: 'Cobiçado ate pelos proprios Deuses o DDD pode reviver seu personagem com 100% da vida, até mesmo Deuses que sua existência já Exauriu! '},
+        {id: '2', item: 'Mapa do tesouro',          quantidade: 4, descricao: 'Mostra a localização do tesouro na Região encontrada '},
+        {id: '3', item: 'Elixir de ervas raras',    quantidade: 2, descricao: 'Uma formula feita com sangue dos primeiros, restaura 66% da vida'},
+        {id: '4', item: 'Fruta podre',              quantidade: 3, descricao: 'Um fruto colhido de uma árvore alimentada com os corpos e suspiros dos mortos, perde 35% da vida e restaura 60 de mana '},
+        {id: '5', item: 'Chave enferrujada',        quantidade: 6, descricao: 'Uma chave que já serviu para algo mas está indecifravel a não ser pela pedra em sua base q só pode ser encontrada em um unico lugar'},
     ]
 
     const handlePress = (id) => {
