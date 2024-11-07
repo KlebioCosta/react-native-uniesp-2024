@@ -1,50 +1,80 @@
-import { View, Text, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { Audio } from 'expo-av';
+
 
 const HomeScreen = ({ navigation }) => {
 
-    const users = [
-        {id: 1, name: 'John Snow', age: 30, gender: 'male' },
-        {id: 2, name: 'Janny Memmy', age: 27, gender: 'female' }
-    ]
+  const users = [
+      {id: 1, name: 'John Snow', age: 30, gender: 'male' },
+      {id: 2, name: 'Janny Memmy', age: 27, gender: 'female' }
+  ];
+
+  const [clickSound, setClickSound] = useState();
+  
+  const playSound = async () => {
+    if(clickSound) {
+      await clickSound.replayAsync();
+    }
+  };
+
+  const loadSound = async () => {
+    const { sound } = await Audio.Sound.createAsync(
+      require('../../assets/sounds/click-21156.mp3')
+    )
+    setClickSound(sound)
+  };
+
+  useEffect(() => {
+    loadSound()
+
+    return () => {
+      if(clickSound) {
+        clickSound.unloadAsync();
+      }
+    }
+  }, []);
+
+  const handlePress = (user) => {
+    playSound()
+    navigation.navigate('Details', { user })
+  };
+
   return (
     <View style={styles.container} >
-        {
-            //falta o onPress
-            users.map((user) => (
-                <TouchableOpacity 
-                    key={user.id}
-                    style={styles.userCard}
-                >
-                    <Text style={styles.userName} >
-                        {user.name}
-                    </Text>
-                </TouchableOpacity>
-            ))
-        }
+      {users.map((user) => (
+          <TouchableOpacity 
+              key={user.id}
+              style={styles.userCard}
+              onPress={() => handlePress(user)}
+          >
+              <Text style={styles.userName} >
+                  {user.name}
+              </Text>
+          </TouchableOpacity>
+      ))}
     </View>
   )
-}
+};
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
-      backgroundColor: '#f0f0f0',
+      backgroundColor: '#B8F1F4',
     },
     userCard: {
       flexDirection: 'row',
       alignItems: 'center',
-      backgroundColor: '#fff',
-      marginVertical: 10,
-      padding: 10,
-      borderRadius: 5,
+      backgroundColor: '#A0E7E5',
+      marginVertical: 12,
+      padding: 9,
+      borderRadius: 10.05,
       shadowColor: '#000',
-      shadowOffset: { width: 0, height: 1 },
-      shadowOpacity: 0.22,
-      shadowRadius: 2.22,
-      elevation: 3,
+      shadowOffset: { width: 0.05, height: 1 },
+      shadowOpacity: 15.05,
+      shadowRadius: 17.22,
     },
     userImage: {
       width: 50,

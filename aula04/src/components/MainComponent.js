@@ -6,7 +6,7 @@ const MainComponent = () => {
     const {theme, toggleTheme} = useContext(ThemeContext)
   
     return (
-    <View style={[styles.container, theme === 'dark' ? styles.dark : styles.light]} >
+    <View style={[styles.container, theme === 'dark' ? styles.dark : styles.light ]} >
       <Text style={theme === 'dark' ? styles.darkText : styles.lightText}>
         O tema atual é: {theme}
       </Text>

@@ -1,12 +1,15 @@
-import { View, Text, StyleSheet, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TextInput, Button } from 'react-native'
 import React, { useState } from 'react'
 
 const Exercicio05 = () => {
     const [text, setText] = useState('')
-    const [tasks, setTasks] = useState([])
+    const [books, setBooks] = useState([])
     
-    const handleAddTask = () => {
-        
+    const handleAddBooks = () => {
+        if(text.trim()) {
+            setBooks([...books, text])
+            setText('')
+        }
     }
   return (
     <View style={styles.container}>
@@ -28,10 +31,14 @@ const Exercicio05 = () => {
                 placeholderTextColor={'silver'}
                 style={styles.textInput}
             />
+            <Button title="Adicionar Livro" onPress={handleAddBooks}/>
         </View>
 
         <View style={styles.listStyle}>
             <Text>Livros com saida</Text>
+            {books.map((book, index) => (
+                <Text key={index} >{book}</Text>
+            ))}
         </View>
     </View>
   )
