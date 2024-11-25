@@ -20,7 +20,7 @@ const HomeScreen = ({ navigation }) => {
 
   const loadSound = async () => {
     const { sound } = await Audio.Sound.createAsync(
-      require('../../assets/sounds/click-21156.mp3')
+      require('../../assets/sounds/click-sound.mp3')
     )
     setClickSound(sound)
   };
@@ -75,12 +75,14 @@ const styles = StyleSheet.create({
       shadowOffset: { width: 0.05, height: 1 },
       shadowOpacity: 15.05,
       shadowRadius: 17.22,
+      elevation: 7
     },
     userImage: {
       width: 50,
       height: 50,
       borderRadius: 25,
       marginRight: 10,
+    
     },
     userName: {
       fontSize: 18,
