@@ -1,2 +1,40 @@
-aula01/.idea/.gitignore
-node_modules
+# Dependências do Node.js
+node_modules/
+
+# Configurações do Editor/IDE
+.idea/
+.vscode/
+*.swp
+
+# Configurações do Sistema Operacional
+Thumbs.db  # Windows
+
+# Logs e depuração
+npm-debug.log*
+
+# Arquivos de Build e Cache
+build/
+dist/
+out/
+coverage/
+.cache/
+tmp/
+
+# React Native
+.expo/
+.expo-shared/
+
+# Configurações de Ambiente e Sensíveis
+.env
+.env.local
+.env.development
+.env.development.local
+.env.test
+.env.test.local
+.env.production
+.env.production.local
+
+# Outros arquivos gerados automaticamente
+*.log
+*.lock
+*.bak
