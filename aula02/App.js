@@ -14,6 +14,7 @@ const App = () => {
       <Exercicio03 />
       <Exercicio04 />*/}
       <Exercicio05 />
+
     </View>
   )
 }

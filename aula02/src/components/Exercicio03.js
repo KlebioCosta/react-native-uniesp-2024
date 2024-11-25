@@ -6,7 +6,7 @@ const Exercicio03 = () => {
     <View style = {styles.container} >
         <View style = {[styles.box, {backgroundColor: 'pink' }]} />
         <View style = {styles.flexBox} />
-        <View style = {[styles.box, {backgroundColor: 'silver' }]}/>
+        <View style = {styles.box} />
     </View>
   )
 }
@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     },
     box: {
         height: '100%',
-        width: 50
+        width: 50,
+        backgroundColor: 'silver'
     },
     flexBox: {
         flex: 1,

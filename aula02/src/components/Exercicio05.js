@@ -4,10 +4,13 @@ import React, { useState } from 'react'
 const Exercicio05 = () => {
     const [text, setText] = useState('')
     const [books, setBooks] = useState([])
+    const [idCounter, setIdCounter] = useState(1);
     
     const handleAddBooks = () => {
         if(text.trim()) {
-            setBooks([...books, text])
+            const newBook = { id: idCounter, name: text.trim() }
+            setBooks([...books, newBook])
+            setIdCounter(idCounter + 1)
             setText('')
         }
     }
@@ -18,12 +21,12 @@ const Exercicio05 = () => {
             <Text style={styles.headerTitleStyle}>BIBLIOTECA</Text>
         </View>
 
-        <View style={styles.subTitleStyle}>
-        <Text style={styles.headerSubStyle}>Controle de Livros</Text>
+        <View style={styles.subtitleStyle}>
+        <Text style={styles.subtitleTextStyle}>Controle de Livros</Text>
         </View>
         
         <View style={styles.bodyStyle}>
-            <Text>Saida de Livros</Text>
+            <Text style={styles.bookListStyle}>Saida de Livros</Text>
             <TextInput
                 value={text}
                 onChangeText={setText}
@@ -31,13 +34,15 @@ const Exercicio05 = () => {
                 placeholderTextColor={'silver'}
                 style={styles.textInput}
             />
-            <Button title="Adicionar Livro" onPress={handleAddBooks}/>
+            <View style={styles.buttonStyle}>
+                <Button title="Adicionar Livro" onPress={handleAddBooks}/>
+            </View>
         </View>
 
         <View style={styles.listStyle}>
-            <Text>Livros com saida</Text>
-            {books.map((book, index) => (
-                <Text key={index} >{book}</Text>
+            <Text style={styles.bookExitStyle}>Livros com saida</Text>
+            {books.map((book) => (
+                <Text key={book.id}> {book.id}. {book.name} </Text>
             ))}
         </View>
     </View>
@@ -46,42 +51,65 @@ const Exercicio05 = () => {
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
-
+        flex: 1,
+        padding: 17,
+        marginTop: 19,
+        backgroundColor: '#f9f9f9',
     },
     headerStyle: {
         justifyContent: 'center',
-        backgroundColor: 'black',
-        height: 90,
-        alignItems: 'center',
+        backgroundColor: '#333',
+        height: 100,
+        borderRadius: 11,
+        marginBottom: 1
 
     },
     headerTitleStyle: {
+        fontSize: 30,
+        color: '#fff',
         textAlign: 'center',
-        fontSize: 26,
         fontFamily: 'serif',
         fontStyle: 'italic',
-        color: 'red',
+        fontWeight: 'bold'
     },
-    subTitleStyle: {
+    subtitleStyle: {
         alignItems: 'center',
-        margin: 20
+        marginBottom: 16
     },
-    headerSubStyle: {
-        fontSize: 20,
-        alignItems: 'center',
-        color: 'red',
+    subtitleTextStyle: {
+        fontSize: 21,
+        color: '#555',
     },
     bodyStyle: {
-        marginTop: 30,
-
+        marginBottom: 20,
+    },
+    bookListStyle: {
+        fontSize: 18,
+        color: '#333',
+        fontWeight: 'bold',
+        marginBottom: 8,
     },
     textInput: {
-        borderColor: 'red'
+        borderColor: '#ddd',
+        borderWidth: 1,
+        borderRadius: 8,
+        paddingHorizontal: 10,
+        backgroundColor: '#fff',
+        marginBottom: 10,
     },
-    listStyle: {
+    buttonStyle: {
+        marginTop: 15,
+    },
+    bookListStyle: {
+        marginTop: 20
+    },
+    bookExitStyle: {
+        fontSize: 18,
+        color: '#333',
+        fontWeight: 'bold',
+        marginBottom: 8,
+    },
 
-    }
 })
 
 export default Exercicio05
