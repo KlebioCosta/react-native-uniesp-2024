@@ -1,5 +1,5 @@
 import React from 'react'
-import { ThemeProvider } from '@react-navigation/native'
+import { ThemeProvider } from './src/contexts/ThemeContext'
 import MainComponent from './src/components/MainComponent'
 
 const App = () => {
