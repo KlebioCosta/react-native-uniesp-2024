@@ -190,7 +190,7 @@ Essas bibliotecas são essenciais para o funcionamento do projeto, proporcionand
 ## Como rodar a aplicação
 
 ### Clonar o repositório
-git clone https://github.com/usuario/nome-do-repositorio.git
+git clone https://github.com/KlebioCosta/react-native-uniesp-2024/tree/main/study-app
 
 ### Navegar até o diretório do projeto
 cd study-app
