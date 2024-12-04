@@ -1,25 +1,28 @@
-import { View, Text, FlatList, StyleSheet } from 'react-native'
-import React, { useContext } from 'react'
-import CartoesEstudoContext from '../contexts/CartoesEstudoContext'
+import React, { useContext } from 'react';
+import { View, Text, FlatList, StyleSheet } from 'react-native';
+import CartoesEstudoContext from '../contexts/CartoesEstudoContext';
+
 
 const TarefasVencimentoProximoScreen = () => {
+    const { cartoes } = useContext(CartoesEstudoContext);
 
-    const { cartoes } = useContext(CartoesEstudoContext)
+    const hoje = new Date();
 
-    const hoje = new Date()
+    
     const cartoesVencimentoProximo = cartoes.filter(cartao => {
-        const dataTermino = new Date(cartao.dataTermino)
-        const diferencaDias = (dataTermino - hoje) / (1000 * 60 * 60 * 24)
-        return diferencaDias >= 0 && diferencaDias <= 15
-    })
+        const dataTermino = new Date(cartao.dataTermino);
+        const diferencaDias = (dataTermino - hoje) / (1000 * 60 * 60 * 24);
+        return diferencaDias >= 0 && diferencaDias <= 15;
+    });
 
+    
     const renderizarCartao = ({ item }) => (
         <View style={styles.card}>
             <Text style={styles.cardTitle}>{item.titulo}</Text>
             <Text>Status: {item.status}</Text>
             <Text>Data/Hora de Término: {new Date(item.dataTermino).toLocaleString()}</Text>
         </View>
-    )
+    );
 
     return (
         <View style={styles.container}>
@@ -30,8 +33,8 @@ const TarefasVencimentoProximoScreen = () => {
                 renderItem={renderizarCartao}
             />
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     container: {

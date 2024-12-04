@@ -1,17 +1,26 @@
-import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAuth } from 'firebase/auth'
-import { getFireStore } from 'firebase/firestore'
+import { initializeApp, getApp, getApps } from "firebase/app";
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import {
+  FIREBASE_API_KEY,
+  FIREBASE_AUTH_DOMAIN,
+  FIREBASE_PROJECT_ID,
+  FIREBASE_STORAGE_BUCKET,
+  FIREBASE_MESSAGING_SENDER_ID,
+  FIREBASE_APP_ID
+} from '@env';
 
 const firebaseConfig = {
-    FIREBASE_API_KEY,
-    authDomain: "study-app-7a635.firebaseapp.com",
-    projectId: "study-app-7a635",
-    storageBucket: "study-app-7a635.firebasestorage.app",
-    messagingSenderId: "991640502419",
-    appId: "1:991640502419:web:02144e603d2d398fd90d66"
+  apiKey: FIREBASE_API_KEY,
+  authDomain: FIREBASE_AUTH_DOMAIN,
+  projectId: FIREBASE_PROJECT_ID,
+  storageBucket: FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: FIREBASE_MESSAGING_SENDER_ID,
+  appId: FIREBASE_APP_ID
 };
+
 
 const app = !getApps.length ? initializeApp(firebaseConfig) : getApp();
 
 export const auth = getAuth(app)
-export const db = getFireStore(app)
+export const db = getFirestore(app)
